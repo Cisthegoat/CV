@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale =1.0">
+        <meta http-esquiv="X-UA-Compatible" content="ie=edge">
+        <title>Profile</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" href="/favicon.ico" type ="image/x-icon">
+    </head>
+
+    <body style="background-color:#f2f2f2; margin:0">
+        <main>
+
+            <div class="nav_bar">
+                <a href="/">Marketplace</a>
+                <a href="/dashboard">Dashboard</a>
+                <div class="nav_bar_right">
+
+                    <div style="position:relative; display: inline-block;">
+                        <img src="https://i.pinimg.com/736x/9a/9d/bb/9a9dbb94c8b4032b463e206275d965d3.jpg" alt="Avatar" class="settings_icon" onclick="show_dropdown()">
+
+                        <div class="settings_drop_down">
+
+                            <a href="/profile" class="settings_drop_down_link">Profile</a>
+                            <a href="/logout"class="settings_drop_down_link">Logout</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="profile_container">
+                <img src="https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_640.png" alt="Avatar" class="avatar_profile">
+
+                <div class="profile_text">
+                    <span class="name_profile"><b>Lamine Yamal</b></span>
+                    <div class="location_profile"><span> <img src="https://www.iconpacks.net/icons/2/free-location-icon-2952-thumb.png" alt="chat_icon" class="location_icon"></span>Montreal, Canada</div>
+                    <div class="bio_profile" style="margin-left: 5%; padding-top 0%;">Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears. This forces the writer to use creativity to complete one of three common writing challenges. The writer can use the paragraph as the first one of a short story and build upon it. A second option is to use the random paragraph somewhere in a short story they create. The third option is to have the random paragraph be the ending paragraph in a short story. No matter which of these challenges is undertaken, the writer is forced to use creativity to incorporate the paragraph into their writing.</div>
+                </div>
+
+            </div>
+
+            <div class="profile_stats_container">
+                <!-- Left: Rating -->
+                <div class="profile_stat rating">
+                    <img src="https://www.citypng.com/public/uploads/preview/download-star-silhouette-orange-icon-png-735811696934096ugpfr7gzzd.png" alt="stars" class="stars_icon">
+                    <span><b>4.5</b></span>
+                </div>
+
+                <!-- Center: Average Price -->
+                <div class="profile_stat">
+                    <span><b>Average Price: $1</b></span>
+                </div>
+
+                <!-- Right: Level -->
+                <div class="profile_stat">
+                    <span class="level">Rookie</span>
+                </div>
+            </div>
+
+
+
+        </main>
+        <script src="/static/profile.js"></script>
+    </body>
+</html>

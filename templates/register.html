@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale =1.0">
+        <meta http-esquiv="X-UA-Compatible" content="ie=edge">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" href="./favicon.ico" type ="image/x-icon">
+    </head>
+    <body>
+        <div class="login_container">
+
+
+            <b class="sign_in_text">
+                REGISTER
+            </b>
+
+        <div class="login_form">
+            <form action="/register" method="post">
+
+                <div style="padding-bottom: 5px">
+                    <input class="form_style"name="username" autocomplete="off" placeholder="Username" type="text">
+                </div>
+
+                <div style="padding-bottom: 5px">
+                    <input class="form_style" name="password" placeholder="Password" type="password">
+                </div>
+
+                <div style="padding-bottom: 5px">
+                    <input class="form_style" name="confirmation" placeholder="Password Confirmation" type="password">
+                </div>
+
+                <div style="padding-bottom: 5px">
+                    <input class="form_style" name="email" placeholder="Email (Optional)" type="email">
+                </div>
+
+                <button class="login_button" type="submit">Register</button>
+
+                <div style="padding-top: 5px">
+                    Already have an account? <a href="/login">Login</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
