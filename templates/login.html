@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale =1.0">
+        <meta http-esquiv="X-UA-Compatible" content="ie=edge">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" href="./favicon.ico" type ="image/x-icon">
+    </head>
+
+    <body style="background-color:#f2f2f2; margin:0">
+        <div class="login_container">
+
+
+            <b class="sign_in_text">
+                SIGN IN
+            </b>
+
+            <div class="login_form">
+
+                <form action="/login" method="post">
+
+
+                    <div style="padding-bottom: 5px">
+                        <input class="form_style" name="username" placeholder="Username" type="text" autofocus>
+                    </div>
+
+                    <div style="padding-bottom: 5px">
+                        <input class="form_style" name="password" placeholder="Password" type="password">
+                    </div>
+
+                    <button class="login_button" type="submit">Login</button>
+
+                </form>
+
+                <div style="padding-top: 5px">
+                    Don't have an account yet? <a href="/register">Register</a>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale =1.0">
+        <meta http-esquiv="X-UA-Compatible" content="ie=edge">
+        <title>Marketplace</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" href="/favicon.ico" type ="image/x-icon">
+    </head>
+
+    <script>
+
+        let clickcount = 0;
+
+        function show_dropdown() {
+            clickcount ++;
+
+            if (clickcount % 2 === 1)
+            {
+                document.querySelector(".settings_drop_down").style.display = "block";
+            }
+            else
+            {
+                document.querySelector(".settings_drop_down").style.display = "none";
+            }
+        }
+
+    </script>
+
+    <body style="background-color:#f2f2f2; margin:0">
+        <main>
+
+            <div class="nav_bar">
+                <a href="/" class="active">Marketplace</a>
+                <a href="/dashboard">Dashboard</a>
+
+                <div class="nav_bar_right">
+                    <div>
+                        <span> <a href="/messages"> <img src="https://i.pinimg.com/736x/1d/f7/96/1df796d0170ca6f3e273e22d1b69f4d4.jpg" alt="chat_icon" class="message_icon"> </a> </span>
+                        <img src="https://i.pinimg.com/736x/9a/9d/bb/9a9dbb94c8b4032b463e206275d965d3.jpg" alt="Avatar" class="settings_icon" onclick="show_dropdown()">
+
+                        <div class="settings_drop_down">
+                            <a href="/profile" class="settings_drop_down_link">Profile</a>
+                            <a href="/logout"class="settings_drop_down_link">Logout</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <form action="/" method="post">
+
+                <div class="traveler_filter">
+
+                    <input style="width: 150px;"class="location_input_size" name="pick_up_city" autocomplete="off" placeholder="Pick up location" type="text" autofocus>
+                    <input style="width: 155px;"class="location_input_size" name="drop_off_city" autocomplete="off" placeholder="Drop off location" type="text">
+
+                    <input style="width: 110px;" class="location_input_size" name="weight" autocomplete="off" placeholder="Weight (kg)" type="text">
+
+                    <input style="width: 85px;" class="location_input_size" name="price" autocomplete="off" placeholder="Price ($)" type="text">
+
+                    <select class="location_input_size" name="item_type" id="item_type">
+                        <option disabled selected> item_type </option>
+                        <option value="books">Books</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="food">Food</option>
+                        <option value="toys">Toys</option>
+                        <option value="beauty">Beauty Products</option>
+                        <option value="home">Home Gadgets</option>
+                        <option value="others">Other</option>
+                    </select>
+
+
+                    <div class="input-container">
+                        <input class="date_input" type="date" id="depart_date" name="depart_date"/>
+                        <input class="date_input" type="date" id="arrival_date" name="arrival_date"/>
+                    </div>
+
+                    <button class="search_request_button" onclick="request_form()">Find requests</button>
+
+
+                </div>
+
+            </form>
+
+
+            <div class="offer_grid">
+
+                {% for option in options %}
+
+                    <div class="offer_container">
+                        <div class="posted_by">
+                            <img src="https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_640.png" alt="Avatar" class="avatar">
+                            <a href="/messages?recipient_id={{ option.user_id }}" class="posted_by_text" style="margin-left: 5%; padding-top 0%;"> Posted by: <b>{{option.username}}</b></a>
+                            <span> <a href="/messages/{{ option.user_id }}"> <img src="https://i.pinimg.com/736x/1d/f7/96/1df796d0170ca6f3e273e22d1b69f4d4.jpg" alt="chat_icon" class="chat_icon"> </a> </span>
+
+                        </div>
+
+                        <hr style="width: 90%;">
+
+                        <p style="margin-left: 5%;"> <b>Origin: </b>{{option.pick_up_location}} ({{option.depart_date}})</p>
+
+                        <p style="margin-left: 5%;"><b>Departure: </b>{{option.drop_off_location}} ({{option.arrival_date}})</p>
+
+                        <p style="margin-left: 5%;"><b>Weight: </b>{{option.weight}} kg</p>
+
+                        <p style="margin-left: 5%;"><b>Price: </b>{{option.price}} $</p>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+
+
+
+        </div>
+        </main>
+        <script src="/static/index.js"></script>
+    </body>
+</html>
